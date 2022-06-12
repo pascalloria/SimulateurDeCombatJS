@@ -20,8 +20,9 @@ journalCombat.style.display="inline-block";
 journalCombat.style.textAlign="left";
 // ajout de padding et gestion des couleurs
 journalCombat.style.padding = "20px"
-journalCombat.style.backgroundColor = "White"
-journalCombat.style.color = "black"
+journalCombat.style.backgroundColor = "black"
+journalCombat.style.color = "yellow"
+journalCombat.style.fontFamily=  "Palatino"
 
 
 document.body.style.backgroundImage = "url(images/fond.jpg)"
