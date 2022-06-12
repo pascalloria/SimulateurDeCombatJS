@@ -58,7 +58,7 @@ class Magicien extends Combattant{
         if (this.nombreSort ==0){
             this.bouleDeFeu(cible)
         }
-        else if (his.nombreSort==1){
+        else if (this.nombreSort==1){
             this.LanceDeGlace(cible)
         } else {
             this.EclairFoudroyant(cible)
