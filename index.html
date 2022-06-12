@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimFight</title>
+</head>
+<body>
+
+    <form name="formhorloge">
+        <input type="button" name="horloge" value=" 21:54:31">
+    </form>
+    <h1 class="center">Simulateur de combat JS</h1>
+    <div class="center" id="colum">
+        <h2>Création du combattant 1</h2>
+        <p> Choix de la classe de votre combattant</p>
+        <div id="classe1">
+            <button id="Guerrier">Guerrier</button> <button id="Magicien">Magicien</button>
+        </div>
+        <p>Entrez le nom de votre combattant</p>
+        <div id="nom">
+            <input type="text" name="" id="nom"><button id="valider1">Valider</button>
+        </div>
+        <br><br>        
+    </div>
+
+    <div class="center" id ="colum2">
+        <h2>Création du combattant 2</h2>
+        <p> Choix de la classe de votre combattant</p>
+        <div id="classe2">
+            <button id="Guerrier2">Guerrier</button> <button id="Magicien2">Magicien</button>
+        </div>        
+        <p>Entrez le nom de votre combattant</p>
+        <div>
+            <input type="text" name="" id="nom2"><button id="valider2">Valider</button>
+        </div>
+        <br><br>
+
+    </div>
+    <div class="center"><button id="Combat">Combattre</button></div>
+    <br>
+    <div class="center"><div class="journal" id="journal"></div>
+    </div>
+        <script src="MiseEnPage.js"></script>
+        <script src="utilitaire.js"></script> 
+        <script src="FightSim.js"></script>    
+             
+</body>
+    
+</html>
