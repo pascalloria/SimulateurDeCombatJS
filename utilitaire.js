@@ -7,7 +7,7 @@ function victoire( combattant,XP){
     appendLigne(journalCombat,`${combattant.nom} à gagner`)
     appendLigne(journalCombat,`${combattant.nom} gagne ${XP} XP`)
     combattant.XP +=XP
-
+    appendLigne(journalCombat,`${combattant.information}`)
 }
 
 function desactiverBouton(parent) {
@@ -45,9 +45,9 @@ function modificationSort(combatant,sort,nombreSort){
 }
 
 
-function modificationArme(combatant,arme,degats=5){
+function modificationArme(combatant,arme,degats){
     combatant.arme = arme
-    combatant.degats=degats
+    combatant.degat=degats
 }
 
 function afficherChoixArme(parent,combatant){
@@ -61,21 +61,21 @@ function afficherChoixArme(parent,combatant){
 
     
     buttonEpee.addEventListener("click",()=>{        
-        modificationArme(combatant,'Epée et bouclier');
+        modificationArme(combatant,'Epée et bouclier',3);
         let parent = buttonEpee.parentNode;
         desactiverBouton(parent)
     
     })
     buttonMarteau.addEventListener("click",()=>{
     
-        modificationArme(combatant,'Marteau à 2 main');
+        modificationArme(combatant,'Marteau à 2 main',7);
         let parent = buttonMarteau.parentNode;
         desactiverBouton(parent)
     
     })
     buttonHache.addEventListener("click",()=>{
     
-        modificationArme(combatant,'Double hache');
+        modificationArme(combatant,'Double hache',6);
         let parent = buttonHache.parentNode;
         desactiverBouton(parent)
     
@@ -119,4 +119,4 @@ function afficherChoixSort (parent,combatant){
 
 
 
-//window.onload = heure;
+window.onload = heure;

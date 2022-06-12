@@ -8,7 +8,11 @@ class Combattant {
         this.classe = "none"
     }
     get niveau (){
-        return this.XP/100
+        return Math.floor(this.XP/100)
+    }
+
+    get information(){
+        return (`${this.nom} à ${this.PV} PV et est niveau ${this.niveau}`)
     }
 
     enVie(){
@@ -34,7 +38,7 @@ class Guerrier extends Combattant {
     attaquer (cible){
         if (this.vie) {  
             appendLigne(journalCombat,`Le guerrier ${this.nom} attaque avec son ${this.arme} ${cible.nom} pour ${this.degat} points de degats `)
-            cible.PV -= 6
+            cible.PV -= this.degat
             cible.enVie()
             
         }         
@@ -50,8 +54,7 @@ class Magicien extends Combattant{
         this.nombreSort= 0
     }
 
-    attaquer(cible){
-        //let nombreAleatiore= Math.floor(Math.random()*2)
+    attaquer(cible){        
         if (this.nombreSort ==0){
             this.bouleDeFeu(cible)
         }
