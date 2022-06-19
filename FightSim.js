@@ -123,79 +123,86 @@ function combat(combattant1,combattant2){
 }
 
 // Attribuler les bouttons
-let buttonMagicien1     = document.body.querySelector("#Magicien");
-let buttonGuerrier1     = document.body.querySelector("#Guerrier");
-let buttonValider1      = document.body.querySelector("#valider1");
-let buttonMagicien2     = document.body.querySelector("#Magicien2");
-let buttonGuerrier2     = document.body.querySelector("#Guerrier2");
-let buttonValider2      = document.body.querySelector("#valider2");
-let buttonCombat        = document.body.querySelector("#Combat");
+let buttonMagicien1     = $('#Magicien');
+let buttonGuerrier1     = $("#Guerrier");
+let buttonValider1      = $("#valider1");
+let buttonMagicien2     = $("#Magicien2");
+let buttonGuerrier2     = $("#Guerrier2");
+let buttonValider2      = $("#valider2");
+let buttonCombat        = $("#Combat");
 
 
 
 // declarer nos variable
 //let journalCombat=document.body.querySelector("#journal")
-let classe;let combattant1;let combattant2;let nom; let nom2
+let classe;let combattant1;let combattant2;let nom; let nom2;
+let combatInd=0
 
 // definir les actions des bouttons
-buttonGuerrier1.addEventListener("click",()=>{
+buttonGuerrier1.on("click",()=>{
     combattant1 = new Guerrier("guerrier",25,200,"armes",5)
     combattant1.classe="Guerrier"    
-    let parent = buttonGuerrier1.parentNode
+    let parent = buttonGuerrier1.parent()
     desactiverBouton(parent)
     afficherChoixArme(parent,combattant1)
     
 })
 
-buttonMagicien1.addEventListener("click",()=>{
+buttonMagicien1.on("click",()=>{
     combattant1 = new Magicien("magicien",15,100,40)
     combattant1.classe="Magicien"  ;    
-    let parent = buttonMagicien1.parentNode;
+    let parent = buttonMagicien1.parent();
     desactiverBouton(parent)   
     afficherChoixSort(parent,combattant1);    
 })
 
-buttonGuerrier2.addEventListener("click",()=>{
+buttonGuerrier2.on("click",()=>{
     combattant2 = new Guerrier("guerrier",25,200,"armes",5)
     combattant2.classe="Guerrier";   
-    let parent = buttonGuerrier2.parentNode;
+    let parent = buttonGuerrier2.parent();
     desactiverBouton(parent);
     afficherChoixArme(parent,combattant2);
 })
 
-buttonMagicien2.addEventListener("click",()=>{
+buttonMagicien2.on("click",()=>{
     combattant2 = new Magicien("magicien",15,100,40)
     combattant2.classe="Magicien"    ;
-    let parent = buttonMagicien2.parentNode;
+    let parent = buttonMagicien2.parent();
     desactiverBouton(parent);   
     afficherChoixSort(parent,combattant2);
 })
 
-buttonValider1.addEventListener("click",()=> {
-    let parent = buttonValider1.parentNode;
+buttonValider1.on("click",()=> {
+    let parent =buttonValider1.parent();
     getNom(parent)
     combattant1.nom=nom
     // combattant1.sePresenter()    
     desactiverBouton(parent);  
 })
 
-buttonValider2.addEventListener("click",()=> {
-    let parent = buttonValider2.parentNode;
+buttonValider2.on("click",()=> {
+    let parent = buttonValider2.parent();
     getNom(parent)
     combattant2.nom=nom
-    combattant2.sePresenter()    
+    //combattant2.sePresenter()    
     desactiverBouton(parent);  
 })
 
 
-buttonCombat.addEventListener("click",()=>{
-    if (combattant1 || combattant2){
-        combat(combattant1,combattant2)
-        buttonCombat.disabled=true
+buttonCombat.on("click",()=>{
+
+    if (combatInd ==0){
+        if (combattant1 || combattant2){
+            combat(combattant1,combattant2)
+            //buttonCombat.prop('disabled', true)
+            buttonCombat.text("Restart")
+            combatInd=1
+        } else {
+            alert("Merci de choisir vos combattants")
+        }
     } else {
-        alert("Merci de choisir vos combattants")
-    }
-    
+        location.reload(true)
+    }    
 })
 
 
