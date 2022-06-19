@@ -1,42 +1,54 @@
 
 
 // separer en deux  colonne
-let colum =document.body.querySelector("#colum");
-colum.style.width       ="50%"
-colum.style.float       = "right"
-colum.style.display    = "inline-block"
-let colum2 =document.body.querySelector("#colum2");
-colum2.style.width      ="50%"
-colum2.style.display    = "inline-block"
-colum.style.float       = "left"
+let colum =$("#colum");
+colum.css({
+    "width"     :"50%",
+    "float"     :"left",
+    "display"   :"inline-block",
+    "backgroundColor" : "#BD1321",
+    "opacity" : "0.75"
+
+})
+let colum2 =$("#colum2");
+colum2.css({
+    "width"     :"50%",
+    "display"   :"inline-block",
+    "float"     :"right",
+    "backgroundColor" : "#4954EC",
+    "opacity" : "0.75",
+})
+
 
 // creer un class center
-let centers=document.getElementsByClassName("center")
-for (const e of centers) {e.style.textAlign="center"}
+let centers=$(".center")
+centers.css({"text-align":"center"})
 
 // Justifier a gauche le journale de combats
-let journalCombat=document.body.querySelector("#journal")
-journalCombat.style.display="inline-block";
-journalCombat.style.textAlign="left";
-// ajout de padding et gestion des couleurs
-journalCombat.style.padding = "20px"
-journalCombat.style.backgroundColor = "black"
-journalCombat.style.color = "yellow"
-journalCombat.style.fontFamily=  "Palatino"
+let journalCombat=$("#journal")
+journalCombat.css({
+    'display'           :"inline-block",
+    "text-align"        :"left",
+    // ajout de padding et gestion des couleurs
+    "padding"           : "20px",
+    "backgroundColor"   : "black",
+    "color"             : "yellow",
+    "fontFamily"        :  "Palatino",
+})
+
+$("body").css({
+    'backgroundImage'       : "url(images/fond.jpg)",
+    "color"                 : "white"
+})
 
 
-document.body.style.backgroundImage = "url(images/fond.jpg)"
-document.body.style.color = "white"
-
-colum.style.backgroundColor = "#BD1321"
-colum.style.opacity = "0.75"
-colum2.style.backgroundColor = "#4954EC"
-colum2.style.opacity = "0.75"
 
 // mise en forme du titre 
-let h1 = document.body.querySelector("h1")
-h1.style.fontFamily="Arial"
-h1.style.fontSize="4em"
+let h1 = $("h1")
+h1.css({
+    "font-family"   :"Arial",
+    "font-size"     :"4em"
+})
 
 
 
