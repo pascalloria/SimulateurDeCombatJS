@@ -8,6 +8,7 @@ Compéténce utilise :
     - Ajouter et modifier le code HTML en fonction d'action de l'utilisateur (button)
     - Enregistrer et réutiliser des informations entré par l'utilisateur (nom)
     - Utiliser la programmation orienté objet à l'aide de class
+    - Utilise la bibliotheque jQuery
 
 
 Idée d'amelioration future :
